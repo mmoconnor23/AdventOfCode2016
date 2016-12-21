@@ -19,8 +19,19 @@ function countTriangle(triangle) {
 	}
 }
 
-triangles.forEach((triangle) => {
+triangles.forEach((triangle, idx) => {
 	triangle = triangle.trim().split('  '); //two spaces
+	
+	//split by 2 spaces isn't always correct...
+	if (triangle.length > 3) {
+		let fixedTriangle = [];
+		triangle.forEach((side) => {
+			if (+side) {
+				fixedTriangle.push(side);
+			}
+		});
+		triangle = fixedTriangle;
+	}
 
 	//convert strings to numbers
 	let index = 0;
@@ -40,30 +51,12 @@ if (task === 2) {
 	//into [[1,3,6], [2,4,7], [5,8,13]]
 	let count = 0;
 	let numLines = allInput.length;
-	let triangle1 = [];
-	let triangle2 = [];
-	let triangle3 = [];
-	let newTriangles = [];
 
 	for (let i = 0; i < numLines; i += 3) {
-		triangle1.push(allInput[i][0], allInput[i+1][0], allInput[i+2][0]);
-		triangle2.push(allInput[i][1], allInput[i+1][1], allInput[i+2][1]);
-		triangle3.push(allInput[i][2], allInput[i+1][2], allInput[i+2][2]);
-
-		newTriangles.push(triangle1, triangle2, triangle3);
-
-		countTriangle(triangle1);
-		countTriangle(triangle2);
-		countTriangle(triangle3);
-		
-		triangle1 = [];
-		triangle2 = [];
-		triangle3 = [];
+		countTriangle([allInput[i][0], allInput[i+1][0], allInput[i+2][0]]);
+		countTriangle([allInput[i][1], allInput[i+1][1], allInput[i+2][1]]);
+		countTriangle([allInput[i][2], allInput[i+1][2], allInput[i+2][2]]);
 	}
-
-	// newTriangles.forEach((triangle) => {
-	// 	countTriangle(triangle);
-	// });
 }
 
 console.log('valid triangles: ', validTriangles);
