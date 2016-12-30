@@ -1,0 +1,31 @@
+{
+  "name": "advent-of-code-2016",
+  "version": "1.0.0",
+  "description": "Solutions",
+  "main": "Day1.js",
+  "dependencies": {
+    "lodash": "^4.17.2",
+    "md5": "^2.2.1"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.3",
+    "md5": "^2.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmoconnor23/AdventOfCode2016.git"
+  },
+  "keywords": [
+    "code",
+    "challenge"
+  ],
+  "author": "Melissa OConnor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmoconnor23/AdventOfCode2016/issues"
+  },
+  "homepage": "https://github.com/mmoconnor23/AdventOfCode2016#readme"
+}
